@@ -3,12 +3,18 @@
 #define CONSOLECALENDAR_CALENDAR_H
 
 #include <iostream>
+#include <vector>
 
 #include "CalendarEvent.h"
 
 class Calendar
 {
-    
+public:
+    std::vector<CalendarEvent*> events; // List of CalendarEvent pointers to events from Project deadlines and tasks
+
+    Calendar();
+    void display(int month);
+
 };
 
 #endif // CONSOLECALENDAR_CALENDAR_H

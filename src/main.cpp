@@ -1,8 +1,11 @@
+
 #include <iostream>
+
+#include "Calendar.h"
 
 int main()
 {
-    std::cout << "Hello World!" << std::endl;
+    Calendar calendar = Calendar();
 
     return 1;
 }
