@@ -7,10 +7,10 @@ set(SOURCE_FILES
     src/Project.h
     src/Task.cpp
     src/Task.h
-    src/Event.cpp
-    src/Event.h
     src/Calendar.cpp
-    src/Calendar.h)
+    src/Calendar.h
+    src/CalendarEvent.cpp
+    src/CalendarEvent.h)
 
 add_executable(ConsoleCalendar ${SOURCE_FILES})
 
