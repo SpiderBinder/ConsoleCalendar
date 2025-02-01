@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(ConsoleCalendar)
+project(ptracker)
 
 set(SOURCE_FILES
     src/main.cpp#
@@ -12,5 +12,4 @@ set(SOURCE_FILES
     src/CalendarEvent.cpp
     src/CalendarEvent.h)
 
-add_executable(ConsoleCalendar ${SOURCE_FILES})
-
+add_executable(ptracker ${SOURCE_FILES})

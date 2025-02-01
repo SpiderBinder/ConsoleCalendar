@@ -13,7 +13,10 @@ public:
     std::vector<CalendarEvent*> events; // List of CalendarEvent pointers to events from Project deadlines and tasks
 
     Calendar();
-    void display(int month);
+    ~Calendar();
+
+    void display_day(Date date);
+    void display_month(Date date);
 
 };
 

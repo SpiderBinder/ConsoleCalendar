@@ -3,9 +3,9 @@
 
 #include "Calendar.h"
 
-int main()
+int main(int argc, char *argv[])
 {
-    Calendar calendar = Calendar();
+
 
     return 1;
 }
