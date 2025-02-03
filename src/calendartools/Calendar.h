@@ -3,25 +3,23 @@
 #define CONSOLECALENDAR_CALENDAR_H
 
 #include <iostream>
-#include <vector>
 
 #include "CalendarEvent.h"
+#include "EventMap.h"
 
 class Calendar
 {
+private:
+    
 public:
-    std::vector<CalendarEvent*> events; // List of CalendarEvent pointers to events from Project deadlines and tasks
-
     // Preset date info
-
+    // TODO: Add strings for weekday and month names
 
     Calendar();
     ~Calendar();
 
-    void display_day(Date date);
-    void display_range(Date start_date, Date end_date);
-
-    static std::string get_weekday(Date date);
+    void display_day(Date date, EventMap& events);
+    void display_range(Date start_date, Date end_date, EventMap& events);
 };
 
 #endif // CONSOLECALENDAR_CALENDAR_H
