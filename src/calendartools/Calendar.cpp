@@ -38,5 +38,5 @@ void Calendar::display_day(Date date, EventMap& events)
 // Displays all CalendarEvent details for a range of days (start_date inclusive; end_date exclusive)
 void Calendar::display_range(Date start_date, Date end_date, EventMap& events)
 {
-
+    
 }

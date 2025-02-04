@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     Calendar calendar = Calendar();
 
     // NOTE: Test event for testing to be removed later
-    events_default.add_event(CalendarEvent(Date(3, 2, 2025), "Today"));
+    events_default.add_event(CalendarEvent(current_date, "Today"));
 
     // Displays all events for current day
     calendar.display_day(current_date, events_default);
