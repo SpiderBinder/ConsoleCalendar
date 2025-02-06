@@ -26,7 +26,7 @@ long Date::get_id(Date date)
 // Returns the date id for the Date object
 long Date::get_id()
 {
-    return Date::get_id(this);
+    return Date::get_id(*this);
 }
 
 
@@ -49,7 +49,7 @@ int Date::get_mdays(int month)
         return -1;
     }
 
-    int[] mdays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int mdays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     return mdays[month - 1];
 }
@@ -68,12 +68,55 @@ bool Date::is_leapyear(Date date)
 
 bool Date::is_leapyear()
 {
-    return Date::is_leapyear(this);
+    return Date::is_leapyear(*this);
 }
 
 
 // Returns the difference in days between two dates
 int Date::date_difference(Date date1, Date date2)
 {
+    int difference = 0;
+
     // TODO: Write code for finding the difference in days
+
+    return difference;
+}
+
+bool Date::operator<(const Date& date)
+{
+    if (this->year != date.year)
+    {
+        return (this->year < date.year);
+    }
+    if (this->month != date.month)
+    {
+        return (this->month < date.month);
+    }
+    if (this->day != date.day)
+    {
+        return (this->day < date.day);
+    }
+    if (this->seconds != date.seconds)
+    {
+        return (this->seconds < date.seconds);
+    }
+
+    return false;
+}
+
+Date Date::operator++(int)
+{
+    day++;
+    if (day > Date::get_mdays(month))
+    {
+        day = 1;
+        month++;
+        if (month > 12)
+        {
+            month = 1;
+            year++;
+        }
+    }
+
+    return *this;
 }

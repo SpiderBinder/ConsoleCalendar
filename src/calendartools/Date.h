@@ -2,6 +2,8 @@
 #ifndef CONSOLECALENDAR_DATE_H
 #define CONSOLECALENDAR_DATE_H
 
+#include <iostream>
+
 class Date
 {
 public:
@@ -20,6 +22,11 @@ public:
     bool is_leapyear();
 
     static int date_difference(Date date1, Date date2);
+
+    bool operator<(const Date& date);
+    Date operator++(int);
+
+    // TODO: Make conversion to char* or other 'string' type
 };
 
 #endif // CONSOLECALENDAR_DATE_H

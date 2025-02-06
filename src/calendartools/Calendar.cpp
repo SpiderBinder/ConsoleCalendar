@@ -36,7 +36,30 @@ void Calendar::display_day(Date date, EventMap& events)
 }
 
 // Displays all CalendarEvent details for a range of days (start_date inclusive; end_date exclusive)
-void Calendar::display_range(Date start_date, Date end_date, EventMap& events)
+bool Calendar::display_range(Date start_date, Date end_date, EventMap& events)
 {
-    
+    start_date.seconds = 0;
+    end_date.seconds = 0;
+    if (end_date < start_date)
+    {
+        return false;
+    }
+
+    std::vector<CalendarEvent*> day_events;
+    for (; start_date < end_date; start_date++)
+    {
+        day_events = events.get_day(start_date);
+        
+        // TODO: Add optional date formats
+        std::cout << start_date.day << "/"
+            << start_date.month << "/"
+            << start_date.year << ":";
+        for (int i = 0; i < day_events.size(); i++)
+        {
+            std::cout << " -" << day_events[i]->title;
+        }
+        std::cout << std::endl;
+    }
+
+    return true;
 }

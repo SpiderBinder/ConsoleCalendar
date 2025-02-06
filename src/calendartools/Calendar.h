@@ -19,7 +19,7 @@ public:
     ~Calendar();
 
     void display_day(Date date, EventMap& events);
-    void display_range(Date start_date, Date end_date, EventMap& events);
+    bool display_range(Date start_date, Date end_date, EventMap& events);
 };
 
 #endif // CONSOLECALENDAR_CALENDAR_H
